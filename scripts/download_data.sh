@@ -18,23 +18,3 @@ done
 
 # nb: if you want to test your code instead of downloading the whole (heavy) files, -X 1000 will only focus on the first 1000 elements of the files, since they're a bit heavy
 #nb_bis: fastq-dump directement relié à la base de données du NCBI, les numéros d'accession seuls sont alors suffisants pour spécifier que télécharger
-
-#DATA QUALITY ASSESSMENT
-
-fastqc -o /home/rstudio/mydatalocal/tp_ngs_nematode/results/processed_data /home/rstudio/mydatalocal/tp_ngs_nematode/data/*.gz
-
-multiqc -o /home/rstudio/mydatalocal/tp_ngs_nematode/results/processed_data/multiqc processed_data
-
-
-#DATA CLEANING
-
-#maybe try several parameters, partition in the group
-
-#COMPLETE NEMATODE GENOME
-
-cd /home/rstudio/mydatalocal/tp_ngs_nematode/data
-mkdir reference_genome
-cd reference_genome
-
-wget http://ftp.ensembl.org/pub/release-104/fasta/caenorhabditis_elegans/cdna/Caenorhabditis_elegans.WBcel235.cdna.all.fa.gz
-
