@@ -16,5 +16,5 @@ Enfin, on réitère les analyses de qualité sur l'output de trimmomatic à l'ai
 On télécharge et unzip le transcriptome de référence de *C.elegans* sur [Ensembl](http://ftp.ensembl.org). (*cf. script "whole_trasncriptome*).
 
 On procède ensuite au mapping de nos reads sur le transcriptome de référence. Cette étape offre alors la possibilité de quantifier les reads qui associés à une même séquence. Pour cela, on utilise l'outil [Salmon](https://salmon.readthedocs.io/en/latest/salmon.html). (*cf script "sushi.sh"*)
-
+Pour vérifier comment s'est passé le mapping, on analyse les données de sortie de `salmon` à l'aide de `multiqc` (*code "mapping_output_ana.sh"*)
 
