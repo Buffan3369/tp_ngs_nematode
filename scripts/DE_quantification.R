@@ -64,8 +64,18 @@ plot(res$padj)
 pval_threshold = 0.05
 fold_change_threshold = 0.5  #article
 
-#get the indexes of relevant sequences
-ind <- na.omit(rownames(res)[ (res$padj <= pval_threshold) & (res$log2FoldChange > fold_change_threshold) ])
-length(ind)
-cat(ind)     #we finally select 200 genes significantly differentially expressed in the mutant lines (~10% C.elegans' genome)
+#BE CAREFUL WITH LOG2
 
+  #we split the significantly up and downregulated genes (fold change > thr and < -thr)
+
+ind <- na.omit(rownames(res)[ (res$padj <= pval_threshold) & (2**(res$log2FoldChange) > fold_change_threshold)])
+length(ind)
+
+ind_up <- na.omit(rownames(res)[ (res$padj <= pval_threshold) & (2**(res$log2FoldChange) > fold_change_threshold)])
+length(ind_up)
+
+ind_down <- na.omit(rownames(res)[ (res$padj <= pval_threshold) & (2**(res$log2FoldChange) < -fold_change_threshold)])
+length(ind_down)
+
+GO = file("~/mydatalocal/tp_ngs_nematode/results/genes_of_interest.data", "w")
+cat(ind, sep='\n', file = GO) #save ind
