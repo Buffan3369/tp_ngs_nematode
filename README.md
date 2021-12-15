@@ -22,12 +22,18 @@ Pour vérifier comment s'est passé le mapping, on analyse les données de sorti
 
 
 
-## Quantification, analyse d'expression différentielle
+## Quantification, analyse d'expression différentielle et estimation d'âges
+#Expression différentielle
 
 On commence par charger les output counts de `salmon` dans l'environnement R à l'aide du package `tximport`.
 
 On les analyse à l'aide du package `DESeq2`. On obtient les volcano plots.
 
-On extrait les noms des gènes différetiellement exprîmés entre le WT et notre mutant (*alg-5(ram2)*) et on procède à une Enrichment Analysis sur [Wormbase](https://wormbase.org/tools/enrichment).
+On extrait les noms des gènes différetiellement exprîmés entre le WT et notre mutant (*alg-5(ram2)*) et on procède à une Enrichment Analysis sur [Wormbase](https://wormbase.org/tools/enrichment). On trouve, avec un seuil de log2FoldChange de 1.5, 50 gènes dont l'expression diffère significativement entre le mutant et le WT. Parmi eux, 37 sont up-régulés (niveau d'expression supérieur chez le mutant par rapport au sauvage) et 13 sont down-régulés.
 
-Tout est indiqué dans le script (*"DE_quantification.R"*)
+Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*)
+
+#Estimation d'âge
+Pour estimer l'âge développemental de nos échantillons, on utilise l'outil `RAPToR`.
+On copare avec les échantillons avec une référence larvaire/jeune adulte pour couvrir un intervalle de temps large.
+Les résultats d'estimation d'âge sont présentés ci-dessous.
