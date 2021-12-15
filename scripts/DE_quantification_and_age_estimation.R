@@ -39,7 +39,8 @@ head(txi_salmon$counts)
 
 
 
-#### We create a DESeq object from txi_salmon ####
+################### We create a DESeq object from txi_salmon #########################
+
 
     #specification of the condition: we attribute 2 different classes for wt mutants
     #this will allow us to know which samples will be opposed in the DE analysis
@@ -90,3 +91,25 @@ cat(ind_down)
 
 GO = file("~/mydatalocal/tp_ngs_nematode/results/genes_of_interest.data", "w")
 cat(ind, sep='\n', file = GO) #save ind
+
+
+#################### Age pseudo-estimation ########################
+
+library(RAPToR)
+library(limma)
+
+#quantile normalisation and log-transformation of the expression data
+
+r_larv <- prepare_refdata("Cel_larval", "wormRef", n.inter = 600)
+ae_algram2 <- ae(samp = txi_salmon$lognorm,                  # input gene expression matrix
+                 refdata = r_larv$interpGE,            # reference gene expression matrix
+                 ref.time_series = r_larv$time.series)
+plot(ae_algram2, group = ColData$treatment, show.boot_estimates = TRUE)
+r_larv <- prepare_refdata("Cel_larval_YA", "wormRef", n.inter = 600) #Young Adult Larval reference
+
+#age estimation
+ae_algram2 <- ae(samp = txi_salmon$lognorm,                  # input gene expression matrix
+                 refdata = r_larv$interpGE,            # reference gene expression matrix
+                 ref.time_series = r_larv$time.series)
+colors <- c("orange", "green")
+plot(ae_algram2, group = ColData$treatment, color = colors[ColData$treatment],show.boot_estimates = TRUE)
