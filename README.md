@@ -54,7 +54,7 @@ Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*).
 Dans le papier, les auteurs ne se sont penchés que sur les gènes sous-exprimés, jugeant les changements chez les gènes qualifiés de sur-exprimés trop peu significatifs.
 L'analyse de Gene Ontology menée sur [Wormbase](https://wormbase.org/tools/enrichment) conduit à identifier les voies dans lesquelles ces gènes sont impliqués. On retrouve des gènes associées à la réponse de défense et d'immunité du nématode en commun entre nos résultats et le papier (*cf. figure ci-dessous*). Le fait que l'on ne retrouve pas exactement les mêmes résultats provient très probablement des différences d'outils utilisés à cet effet entre le papier et nos analyses. Nous sommes néanmoins satisfaits de retrouver cette voie en commun.
 
-![Results Gene Ontology](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/downreg_papaer_comparison.png)
+![Results Gene Ontology](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/downreg_paper_comparison.png)
 
 ### Estimation d'âge
 Pour estimer l'âge développemental de nos échantillons, on utilise l'outil `RAPToR`.
