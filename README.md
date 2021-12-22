@@ -47,14 +47,20 @@ On commence par charger les output counts de `salmon` dans l'environnement R à 
 
 On les analyse à l'aide du package `DESeq2`. On obtient les volcano plots.
 
-On extrait les noms des gènes différetiellement exprîmés entre le WT et notre mutant (*alg-5(ram2)*) et on procède à une Enrichment Analysis sur [Wormbase](https://wormbase.org/tools/enrichment). On trouve, avec un seuil de log2FoldChange de 1.5, 50 gènes dont l'expression diffère significativement entre le mutant et le WT. Parmi eux, 37 sont up-régulés (niveau d'expression supérieur chez le mutant par rapport au sauvage) et 13 sont down-régulés.
+On extrait les noms des gènes différetiellement exprîmés entre le WT et notre mutant (*alg-5(ram2)*) et on procède à une Enrichment Analysis sur [Wormbase](https://wormbase.org/tools/enrichment). On trouve, avec un seuil de log2FoldChange de 1.5, 50 gènes dont l'expression diffère significativement entre le mutant et le WT. Parmi eux, 37 sont sous-exprimés (niveau d'expression inférieur chez le mutant par rapport au sauvage) et 13 sont sur-exprimés.
 
-Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*)
+Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*).
+
+Dans le papier, les auteurs ne se sont penchés que sur les gènes sous-exprimés, jugeant les changements chez les gènes qualifiés de sur-exprimés trop peu significatifs.
+L'analyse de Gene Ontology menée sur [Wormbase](https://wormbase.org/tools/enrichment) conduit à identifier les voies dans lesquelles ces gènes sont impliqués. On retrouve des gènes associées à la réponse de défense et d'immunité du nématode en commun entre nos résultats et le papier (*cf. figure ci-dessous*). Le fait que l'on ne retrouve pas exactement les mêmes résultats provient très probablement des différences d'outils utilisés à cet effet entre le papier et nos analyses. Nous sommes néanmoins satisfaits de retrouver cette voie en commun.
+
+![Results Gene Ontology](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/downreg_papaer_comparison.png)
 
 ### Estimation d'âge
 Pour estimer l'âge développemental de nos échantillons, on utilise l'outil `RAPToR`.
-On copare avec les échantillons avec une référence larvaire/jeune adulte pour couvrir un intervalle de temps large.
+On compare avec les échantillons avec une référence larvaire/jeune adulte pour couvrir un intervalle de temps large.
 Les résultats d'estimation d'âge sont présentés ci-dessous.
+
 ![Results Age Estimation](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/age_estimation.png)
 
 ### Quantification de l'impact du développement sur les résultats obtenus
@@ -62,8 +68,12 @@ Les résultats d'estimation d'âge sont présentés ci-dessous.
 On cherche à estimer la part du développement expliquant les différences observées entre les 2 groupes (wt et mutant).
 On dispose de 2 fonctions:
 <ul>
-  <li>`getrefTP`: extraire de la référence disponible sur wormRef les estimés de fold change associés au timing développemental
-  <li>`refCompare`: comparer nos échantillons à la référence en termes de niveaux d'expression. Elle implémente des modèles linéaires pour expliquer les différences d'expression des gènes par le facteur étudié (traitement: wt/mutant).
-
- 
+  <li> `getrefTP` : extraire de la référence disponible sur wormRef les estimés de fold change associés au timing développemental
+  <li> `refCompare` : comparer nos échantillons à la référence en termes de niveaux d'expression. Elle implémente des modèles linéaires pour expliquer les différences d'expression des gènes par le facteur étudié (traitement: wt/mutant).
+</ul>
 ![Results Development Impact](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/dvt_impact.png)
+   
+ ## Conclusion
+ 
+ 
+   
