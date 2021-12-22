@@ -77,5 +77,6 @@ On dispose de 2 fonctions:
 
  ## Conclusion
  
-Blabla 
+Nos analyses ont conduit à des résultats sensiblement identiques à ceux obtenus dans l'article.
+Nos procédures complémentaires d'estimation d'âge
    
