@@ -1,5 +1,16 @@
 # TP NGS 2021 NÉMATODE
 
+## Contexte
+
+[Brown et al. 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5587817/) ont travaillé sur les protéines Argonautes de *C.elegans*. Ces protéines s'associent à des miRNA et sont connues pour réguler l'expression d'un grand nombre de gènes et sont assez conservées dans le vivant. Les auteurs se sont plus précisément penchés sur la protéine ALG-5, dont les implications fonctionnelles chez le nématode étaient encore inconnues au temps de l'étude. 
+
+Leur étude comporte deux axes:
+ <ol>
+  <li> Par RNAseq haut débit, ils ont trouvé qu'ALG-5 se liait à un sous-ensemble de miRNA assez précis, à la différence d'ALG-1 et ALG-2, deux argonautes déjà connues. 
+  <li> Par analyse d'expression différentielle chez les mutants *alg-5*, ils identifient les voies dans lesquelles la protéine semble impliquée.
+    
+ Toutefois, 
+      
 ## Téléchargement des données de RNAseq
 
 On télécharge les données sur [GEO database](https://www.ncbi.nlm.nih.gov/geo/) à l'aide de `fastqdump`.On se focalise sur les mutants ram2.
@@ -23,7 +34,7 @@ Pour vérifier comment s'est passé le mapping, on analyse les données de sorti
 
 
 ## Quantification, analyse d'expression différentielle et estimation d'âges
-#Expression différentielle
+### Expression différentielle
 
 On commence par charger les output counts de `salmon` dans l'environnement R à l'aide du package `tximport`.
 
@@ -33,13 +44,13 @@ On extrait les noms des gènes différetiellement exprîmés entre le WT et notr
 
 Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*)
 
-#Estimation d'âge
+### Estimation d'âge
 Pour estimer l'âge développemental de nos échantillons, on utilise l'outil `RAPToR`.
 On copare avec les échantillons avec une référence larvaire/jeune adulte pour couvrir un intervalle de temps large.
 Les résultats d'estimation d'âge sont présentés ci-dessous.
 ![Results Age Estimation]()
 
-#Quantification de l'impact du développement sur les résultats obtenus
+### Quantification de l'impact du développement sur les résultats obtenus
 
 On cherche à estimer la part du développement expliquant les différences observées entre les 2 groupes (wt et mutant).
 On dispose de 2 fonctions:
