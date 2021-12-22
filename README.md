@@ -55,7 +55,7 @@ Tout est indiqué dans le script (*"DE_quantification_and_age_estimation.R"*)
 Pour estimer l'âge développemental de nos échantillons, on utilise l'outil `RAPToR`.
 On copare avec les échantillons avec une référence larvaire/jeune adulte pour couvrir un intervalle de temps large.
 Les résultats d'estimation d'âge sont présentés ci-dessous.
-![Results Age Estimation](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/age_estimation.png)
+![Results Age Estimation](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/age_estimation.png)
 
 ### Quantification de l'impact du développement sur les résultats obtenus
 
@@ -65,4 +65,5 @@ On dispose de 2 fonctions:
   <li>`getrefTP`: extraire de la référence disponible sur wormRef les estimés de fold change associés au timing développemental
   <li>`refCompare`: comparer nos échantillons à la référence en termes de niveaux d'expression. Elle implémente des modèles linéaires pour expliquer les différences d'expression des gènes par le facteur étudié (traitement: wt/mutant).
 
-  
+ 
+![Results Development Impact](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/dvt_impact.png)
