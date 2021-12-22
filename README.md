@@ -72,7 +72,7 @@ On dispose de 2 fonctions:
   <li> `refCompare` : comparer nos échantillons à la référence en termes de niveaux d'expression. Elle implémente des modèles linéaires pour expliquer les différences d'expression des gènes par le facteur étudié (traitement: wt/mutant).
 </ul>
 
-Les résultats présentés ci-dessous sont les coefficients de variabilité inter-traitements ($\beta_1$) pour chaque classe.
+Les résultats présentés ci-dessous sont les coefficients de variabilité inter-traitements ($$\beta_1$$) pour chaque classe.
 ![Results Development Impact](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/dvt_impact.png)
 
 
