@@ -71,9 +71,11 @@ On dispose de 2 fonctions:
   <li> `getrefTP` : extraire de la référence disponible sur wormRef les estimés de fold change associés au timing développemental
   <li> `refCompare` : comparer nos échantillons à la référence en termes de niveaux d'expression. Elle implémente des modèles linéaires pour expliquer les différences d'expression des gènes par le facteur étudié (traitement: wt/mutant).
 </ul>
+
 ![Results Development Impact](https://github.com/Buffan3369/tp_ngs_nematode/blob/master/figures/dvt_impact.png)
-   
+
+
  ## Conclusion
  
- 
+Blabla 
    
